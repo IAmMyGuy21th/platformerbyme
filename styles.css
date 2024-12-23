@@ -1,0 +1,70 @@
+/* Place your CSS styles in this file */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body, .container {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevents scrolling */
+}
+
+#p {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: khaki;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#i {
+  position: relative;
+  bottom: 5%;
+  text-shadow: 4px 4px 0px #fff, -4px 4px 0px #fff, 4px -4px 0px #fff, -4px -4px 0px #fff;
+}
+
+.start {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gold;
+  width: 45px;
+  height: 45px;
+  border-radius: 100%;
+  font-size: .6em;
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  transform: translate(50px, 200px);
+}
+
+.ground {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lawngreen;
+  height: 75px;
+  bottom: 0;
+  width: 100%;
+  font-size: xx-large;
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.tile {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background-color: brown;
+}
