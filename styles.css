@@ -50,10 +50,10 @@ body, .container {
   position: absolute;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items:baseline;
   background-color: lawngreen;
   height: 75px;
-  bottom: 0;
+  bottom: 0%;
   width: 100%;
   font-size: xx-large;
   font-family: "Montserrat", serif;
