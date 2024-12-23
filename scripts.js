@@ -15,11 +15,25 @@ let isJumping = false;
 // Tile properties
 const tileSize = 75;
 const tiles = [
-    {x: 100, y: 300},
-    {x: 175, y: 300},
-    {x: 325, y: 300},
+    {x: 3, y: 1},
+    {x: 5, y: 3},
+    {x: 6, y: 1},
     // Add more coordinates as needed
 ];
+
+function convertToRange(value, srcRange, dstRange){
+  // value is outside source range return
+  if (value < srcRange[0] || value > srcRange[1]){
+    return NaN; 
+  }
+
+  var srcMax = srcRange[1] - srcRange[0],
+      dstMax = dstRange[1] - dstRange[0],
+      adjValue = value - srcRange[0];
+
+  return (adjValue * dstMax / srcMax) + dstRange[0];
+
+}
 
 // Create tiles
 tiles.forEach(tile => {
@@ -28,6 +42,10 @@ tiles.forEach(tile => {
     tileDiv.style.width = `${tileSize}px`;
     tileDiv.style.height = `${tileSize}px`;
     tileDiv.style.position = 'absolute';
+    tile.x *= tileSize
+    tile.y += 1
+    tile.y *= tileSize
+    tile.y = (tile.y * -1) + window.innerHeight
     tileDiv.style.left = `${tile.x}px`;
     tileDiv.style.top = `${tile.y}px`;
     tileDiv.style.backgroundColor = 'brown';
@@ -204,6 +222,19 @@ function gameLoop() {
         playerY = ground.offsetTop - player.offsetHeight;
         playerVelocityY = 0;
         isJumping = false;
+    }
+
+    // Right Wall
+    if ((playerX + player.offsetWidth) > window.innerWidth) {
+        alert("You Won!")
+        playerX = 50
+        playerY = 50
+    }
+
+    // Left Wall
+    if ((playerX) < 0) {
+        playerX = 0
+        playerVelocityX *= -.75
     }
 
     // Update player position
