@@ -3,7 +3,6 @@ const player = document.getElementById('p');
 const ground = document.querySelector('.ground');
 
 // Player properties
-player.style.transform = spawn.style.transform;
 let playerX = 50;
 let playerY = 50;
 let playerVelocityX = 0;
