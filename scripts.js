@@ -149,7 +149,7 @@ function handleCollisions() {
                 let collisionPersists = true;
                 const origX = playerX
                 
-                while (collisionPersists && (vibrateMagnitude < 15)) {
+                while (collisionPersists) {
                     playerX += vibrateMagnitude;
                     if (!rectRect(playerX, playerY, playerX + player.offsetWidth, playerY + player.offsetHeight,
                         tile.x, tile.y, tile.x + tileSize, tile.y + tileSize)) {
@@ -164,11 +164,6 @@ function handleCollisions() {
                     }
                     playerX += vibrateMagnitude;
                     vibrateMagnitude += 1;
-                }
-                while (collisionPersists) {
-                    playerY += 1
-                    collisionPersists = rectRect(playerX, playerY, playerX + player.offsetWidth, playerY + player.offsetHeight,
-                        tile.x, tile.y, tile.x + tileSize, tile.y + tileSize)
                 }
                 playerY += 16
                 playerVelocityX *= -0.5; // Invert horizontal velocity
