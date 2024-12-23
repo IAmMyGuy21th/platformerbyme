@@ -226,9 +226,13 @@ function gameLoop() {
 
     // Right Wall
     if ((playerX + player.offsetWidth) > window.innerWidth) {
-        alert("You Won!")
-        playerX = 50
-        playerY = 50
+        alert("You Won!");
+        playerX = 50;
+        playerY = 50;
+        keys.left = false;  // Update existing keys object
+        keys.right = false; // Update existing keys object
+        keys.up = false;    // Update existing keys object
+        keys.down = false;  // Update existing keys object
     }
 
     // Left Wall
