@@ -150,7 +150,7 @@ function handleCollisions() {
                 let collisionPersists = true;
                 const origX = playerX
                 
-                while (collisionPersists && (vibrateMagnitude > 15)) {
+                while (collisionPersists && (vibrateMagnitude < 15)) {
                     playerX += vibrateMagnitude;
                     if (!rectRect(playerX, playerY, playerX + player.offsetWidth, playerY + player.offsetHeight,
                         tile.x, tile.y, tile.x + tileSize, tile.y + tileSize)) {
