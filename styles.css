@@ -51,7 +51,9 @@ body, .container {
   display: flex;
   justify-content: center;
   align-items:baseline;
-  background-color: lawngreen;
+  background-color: #6def07;
+  opacity: 0.8;
+  background: linear-gradient(135deg, #58ca1655 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(225deg, #58ca16 25%, transparent 25%) -10px 0/ 20px 20px, linear-gradient(315deg, #58ca1655 25%, transparent 25%) 0px 0/ 20px 20px, linear-gradient(45deg, #58ca16 25%, #6def07 25%) 0px 0/ 20px 20px;
   height: 75px;
   bottom: 0%;
   width: 100%;
@@ -66,5 +68,8 @@ body, .container {
   position: absolute;
   width: 75px;
   height: 75px;
-  background-color: brown;
+  background-image: url("https://opengameart.org/sites/default/files/cratetex.png");
+  background-size: 75px;
+  border: 2px solid burlywood;
+  border-radius: 5px;
 }
