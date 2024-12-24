@@ -16,8 +16,11 @@ let isJumping = false;
 const tileSize = 75;
 const tiles = [
     {x: 3, y: 1},
-    {x: 5, y: 3},
-    {x: 6, y: 1},
+    {x: 5, y: 1},
+    {x: 5, y: 2},
+    {x: 8, y: 1},
+    {x: 8, y: 2},
+    {x: 8, y: 3},
     // Add more coordinates as needed
 ];
 
@@ -57,7 +60,8 @@ const keys = {
     left: false,
     right: false,
     up: false,
-    down: false
+    down: false,
+    space: false
 };
 
 // Set up event listeners for key down and key up
@@ -73,7 +77,6 @@ document.addEventListener('keydown', (event) => {
             break;
         case 'ArrowUp':
         case 'w':
-        case ' ':
             keys.up = true;
             break;
         case 'ArrowDown':
@@ -81,6 +84,9 @@ document.addEventListener('keydown', (event) => {
         case 'Shift':
             keys.down = true;
             break;
+        case ' ':
+            keys.space = true;
+            break
     }
 });
 
@@ -96,7 +102,6 @@ document.addEventListener('keyup', (event) => {
             break;
         case 'ArrowUp':
         case 'w':
-        case ' ':
             keys.up = false;
             break;
         case 'ArrowDown':
@@ -104,6 +109,9 @@ document.addEventListener('keyup', (event) => {
         case 'Shift':
             keys.down = false;
             break;
+        case ' ':
+            keys.space = false;
+            break
     }
 });
 
@@ -233,6 +241,7 @@ function gameLoop() {
         keys.right = false; // Update existing keys object
         keys.up = false;    // Update existing keys object
         keys.down = false;  // Update existing keys object
+        keys.space = false;  // Update existing keys object
     }
 
     // Left Wall
